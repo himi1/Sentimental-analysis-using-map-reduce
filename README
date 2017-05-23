@@ -1,0 +1,15 @@
+Code can be run with 'make train' for the training job and 'make predict' for
+the prediction job. The arguments to these targets are provided in the makefile
+and can be configured as desired:
+	MASTER: the Spark context master
+	PRALLELISM: the number of RDD partitions to use
+	LABELED: labeled input archive for training
+	UNLABALED: unlabeled input archive for prediction
+	TRAIN_OUTPUT: directory to output training results
+	PREDICT_OUTPUT: directory to output prediction results
+
+The directory 'tools/' contains a several Python scripts which were used:
+	find_features.py: extract feature names from header line and assign ID's
+	sample_bz2.py: samples a subset of a bZ2 archive for tuning
+	check_sample_ids.py: check whether sample ID order kept in prediction output
+	draw_graph.py: extract tuning information and plot graph
